@@ -5,8 +5,18 @@ rm -rf grading-area
 
 mkdir grading-area
 
+
 git clone $1 student-submission
 echo 'Finished cloning'
+
+cd student-submission
+if [ -f 'ListExamples.java' ]
+then 
+    echo file found
+else
+    exit 1
+fi
+
 
 
 # Draw a picture/take notes on the directory structure that's set up after
